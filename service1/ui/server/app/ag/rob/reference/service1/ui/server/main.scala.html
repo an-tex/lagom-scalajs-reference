@@ -1,0 +1,20 @@
+@(libraryUrl: String, bundleUrl: String)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Moin Music</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("../../../public/images/favicon.png")">
+        <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no">
+    </head>
+    <body>
+        <div id="moinMusicRoot"></div>
+        <script type="text/javascript" src="@libraryUrl"></script>
+        <script type="text/javascript">
+                var exports = window;
+                exports.require = window["moinmusic"].require;
+        </script>
+        <script type="text/javascript" src="@bundleUrl"></script>
+    </body>
+</html>

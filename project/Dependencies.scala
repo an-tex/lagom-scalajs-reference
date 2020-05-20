@@ -5,6 +5,9 @@ object Dependencies {
   val macwire = "com.softwaremill.macwire" %% "macros" % "2.3.3" % "provided"
   val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1" % Test
 
+  // update scala.js 1.0.1 pending: https://github.com/mliarakos/lagom-js/pull/10
+  val lagomJsscalaDslApi = Def.setting("com.github.mliarakos.lagomjs" %%% "lagomjs-scaladsl-api" % "0.3.1-1.6.2")
+
   val overrides = akka.overrides
 
   object akka {
@@ -66,12 +69,5 @@ object Dependencies {
     val generic = Def.setting("io.circe" %%% "circe-generic" % version)
     val genericExtras = Def.setting("io.circe" %%% "circe-generic-extras" % version)
     val parser = Def.setting("io.circe" %%% "circe-parser" % version)
-  }
-
-  object lagomJs {
-    val version = "0.3.1-1.6.2"
-
-    // update scala.js 1.0.1 pending: https://github.com/mliarakos/lagom-js/pull/10
-    val scalaApi = Def.setting("com.github.mliarakos.lagomjs" %%% "lagomjs-scaladsl-api" % version)
   }
 }

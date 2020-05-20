@@ -9,9 +9,7 @@ object Common {
     dockerExposedPorts := Seq(9000),
     dockerUpdateLatest := true,
     dockerRepository := sys.env.get("CI_REGISTRY_IMAGE"),
-    javaOptions in Universal ++= Seq(
-      "-Dpidfile.path=/dev/null"
-    )
+    javaOptions in Universal += "-Dpidfile.path=/dev/null"
   )
 
   val lagom = deployable ++ Seq(
@@ -22,12 +20,14 @@ object Common {
     )) ++ lagomForkedTestSettings
 
   val lagomApi = Seq(
-    libraryDependencies ++= Seq(lagomScaladslApi)
+    libraryDependencies += lagomScaladslApi
   )
 
   val lagomApiJs = Seq(
-    libraryDependencies ++= Seq(lagomJs.scalaApi.value)
+    libraryDependencies += lagomJsscalaDslApi.value
   )
 
-  val play = deployable
+  val play = deployable ++ Seq(
+    libraryDependencies += macwire
+  )
 }

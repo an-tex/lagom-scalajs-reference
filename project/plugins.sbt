@@ -9,7 +9,7 @@ resolvers += Resolver.bintrayRepo("oyvindberg", "converter")
 // sjs 0.6x
 addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.33")
 addSbtPlugin("ch.epfl.scala" % "sbt-web-scalajs-bundler-sjs06" % "0.18.0")
-addSbtPlugin("org.scalablytyped.converter" % "sbt-converter06" % "1.0.0-beta12")
+addSbtPlugin("org.scalablytyped.converter" % "sbt-converter06" % "1.0.0-beta13")
 addSbtPlugin("com.vmunier" % "sbt-web-scalajs" % "1.0.11-0.6")
 
 // sjs 1.x

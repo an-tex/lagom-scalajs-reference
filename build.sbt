@@ -1,4 +1,5 @@
 import Common._
+import Dependencies._
 import sbtcrossproject.CrossPlugin.autoImport.{CrossType, crossProject}
 
 import scala.util.Random
@@ -23,6 +24,11 @@ lazy val service1Api =
     .in(file("service1/api"))
     .jvmSettings(lagomApi)
     .jsSettings(lagomApiJs)
+    .settings(libraryDependencies ++= Seq(
+      circe.core.value,
+      circe.genericExtras.value,
+      circe.parser.value
+    ))
 
 lazy val service1Server = (project in file("service1/server"))
   .enablePlugins(LagomScala)

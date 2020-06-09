@@ -2,6 +2,7 @@ import Dependencies._
 import com.lightbend.lagom.sbt.LagomImport._
 import com.typesafe.sbt.packager.docker.DockerPlugin.autoImport._
 import com.typesafe.sbt.packager.universal.UniversalPlugin.autoImport._
+import play.sbt.PlayImport._
 import sbt.Keys._
 
 object Common {
@@ -16,7 +17,8 @@ object Common {
     libraryDependencies ++= Seq(
       lagomScaladslTestKit,
       macwire,
-      scalaTest
+      scalaTest,
+      filters
     )) ++ lagomForkedTestSettings
 
   val lagomApi = Seq(

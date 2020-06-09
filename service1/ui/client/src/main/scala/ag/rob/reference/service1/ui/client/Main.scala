@@ -12,7 +12,7 @@ object Main {
   private val routerConfig = RouterConfigDsl[Page].buildConfig { dsl =>
     import dsl._
     (
-      staticRoute(root, Home) ~> render(Home.Component())
+      staticRoute(root, Home) ~> render(Home())
       )
       .notFound(redirectToPage(Home)(HistoryReplace))
       .renderWith(Layout.render)

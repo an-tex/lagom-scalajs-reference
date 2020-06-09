@@ -1,6 +1,7 @@
 package ag.rob.reference.service1
 
 import ag.rob.reference.service1.api.Service1Api
+import ag.rob.reference.service2.api.Service2Api
 import akka.actor.typed.scaladsl.adapter._
 import com.lightbend.lagom.scaladsl.api.ServiceLocator.NoServiceLocator
 import com.lightbend.lagom.scaladsl.devmode.LagomDevModeComponents
@@ -32,6 +33,8 @@ abstract class Service1Application(context: LagomApplicationContext)
   lazy val actorSystemTyped = actorSystem.toTyped
 
   lazy val pingActor = actorSystem.spawn(PingActor(), "ping")
+
+  lazy val service2Api = serviceClient.implement[Service2Api]
 
   override lazy val lagomServer: LagomServer = serverFor[Service1Api](wire[Service1Impl])
 }

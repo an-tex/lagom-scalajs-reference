@@ -7,6 +7,8 @@ import scala.util.Random
 lazy val reference = (project in file("."))
   .aggregate(
     common,
+    circeLagom.jvm,
+    circeLagom.js,
     service1Api.jvm,
     service1Api.js,
     service1Server,
@@ -18,10 +20,10 @@ lazy val reference = (project in file("."))
 
 lazy val common = (project in file("common"))
 
-lazy val service1Api =
+lazy val circeLagom =
   crossProject(JSPlatform, JVMPlatform)
     .crossType(CrossType.Pure)
-    .in(file("service1/api"))
+    .in(file("circe-lagom"))
     .jvmSettings(lagomApi)
     .jsSettings(lagomApiJs)
     .settings(libraryDependencies ++= Seq(
@@ -30,13 +32,22 @@ lazy val service1Api =
       circe.parser.value
     ))
 
+lazy val service1Api =
+  crossProject(JSPlatform, JVMPlatform)
+    .crossType(CrossType.Pure)
+    .in(file("service1/api"))
+    .jvmSettings(lagomApi)
+    .jsSettings(lagomApiJs)
+    .dependsOn(circeLagom)
+
 lazy val service1Server = (project in file("service1/server"))
   .enablePlugins(LagomScala)
   .settings(lagom)
-  .dependsOn(common, service1Api.jvm)
+  .dependsOn(common, service1Api.jvm, service2Api)
 
 lazy val service2Api = (project in file("service2/api"))
   .settings(lagomApi)
+  .dependsOn(circeLagom.jvm)
 
 lazy val service2Server = (project in file("service2/server"))
   .enablePlugins(LagomScala)

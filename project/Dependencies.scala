@@ -2,8 +2,8 @@ import org.portablescala.sbtplatformdeps.PlatformDepsPlugin.autoImport._
 import sbt._
 
 object Dependencies {
-  val macwire = "com.softwaremill.macwire" %% "macros" % "2.3.3" % "provided"
-  val scalaTest = "org.scalatest" %% "scalatest" % "3.1.1" % Test
+  val macwire = "com.softwaremill.macwire" %% "macros" % "2.3.7" % "provided"
+  val scalaTest = "org.scalatest" %% "scalatest" % "3.2.0" % Test
   val chimney = Def.setting("io.scalaland" %%% "chimney" % "0.5.2")
 
   val lagomJsscalaDslApi = Def.setting("com.github.mliarakos.lagomjs" %%% "lagomjs-scaladsl-api" % "0.4.0-1.6.2")

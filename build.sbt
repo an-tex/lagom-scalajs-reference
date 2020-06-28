@@ -18,7 +18,7 @@ lazy val reference = (project in file("."))
     service2Server
   )
 
-lazy val common = (project in file("common"))
+lazy val common = project in file("common")
 
 lazy val circeLagom =
   crossProject(JSPlatform, JVMPlatform)
@@ -76,4 +76,3 @@ ThisBuild / lagomServiceGatewayPort := Random.nextInt(10000) + 50000
 ThisBuild / skip in publish := true
 ThisBuild / dynverSeparator := "-"
 ThisBuild / dependencyOverrides ++= Dependencies.overrides
-

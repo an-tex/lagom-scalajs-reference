@@ -1,5 +1,4 @@
 addSbtPlugin("com.lightbend.lagom" % "lagom-sbt-plugin" % "1.6.2")
-addSbtPlugin("com.timushev.sbt" % "sbt-updates" % "0.5.0")
 addSbtPlugin("com.dwijnand" % "sbt-dynver" % "4.0.0")
 
 addSbtPlugin("org.portable-scala" % "sbt-scalajs-crossproject" % "1.0.0")

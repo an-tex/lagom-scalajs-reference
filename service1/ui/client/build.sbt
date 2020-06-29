@@ -15,13 +15,14 @@ Compile / npmDependencies ++= Seq(
   "react-dom" -> "16.13.1",
   "@types/react" -> "16.9.35",
   "@types/react-dom" -> "16.9.8",
-  "antd" -> "4.3.5",
+  "antd" -> "4.4.0",
   "css-loader" -> "3.5.3",
   "style-loader" -> "1.2.1",
   "less" -> "3.11.1",
   "less-loader" -> "6.1.0",
   "@fortawesome/fontawesome-svg-core" -> "1.2.29",
-  "@fortawesome/react-fontawesome" -> "0.1.10"
+  // upgrading causes incomplete generation
+  "@fortawesome/react-fontawesome" -> "0.1.8"
 ) ++ Seq(
   "@fortawesome/free-brands-svg-icons",
   "@fortawesome/pro-light-svg-icons",
@@ -32,6 +33,7 @@ Compile / npmDependencies ++= Seq(
 
 stIgnore ++= List(
   "csstype",
+  "@ant-design/icons"
 )
 
 version in webpack := "4.43.0"

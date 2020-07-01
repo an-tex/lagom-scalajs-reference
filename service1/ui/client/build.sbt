@@ -42,7 +42,6 @@ webpackBundlingMode := BundlingMode.LibraryOnly("moinmusic")
 webpackConfigFile := Some(baseDirectory.value / "webpack.config.js")
 
 scalaJSUseMainModuleInitializer := true
-scalaJSLinkerConfig in(Compile, fullOptJS) ~= (_.withSourceMap(false))
 
 stFlavour := Flavour.Japgolly
 useYarn := true

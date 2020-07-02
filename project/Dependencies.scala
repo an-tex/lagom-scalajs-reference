@@ -11,7 +11,7 @@ object Dependencies {
   val overrides = akka.overrides
 
   object akka {
-    val version = "2.6.5"
+    val version = "2.6.6"
     val httpVersion = "10.1.11"
 
     val actor = "com.typesafe.akka" %% "akka-actor" % version
@@ -53,7 +53,7 @@ object Dependencies {
       ).map("com.typesafe.akka" %% _ % version)
 
     object management {
-      val version = "1.0.7"
+      val version = "1.0.8"
 
       val core = "com.lightbend.akka.management" %% "akka-management" % version
       val discoveryKubernetesApi = "com.lightbend.akka.discovery" %% "akka-discovery-kubernetes-api" % version

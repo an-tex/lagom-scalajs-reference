@@ -1,13 +1,13 @@
 libraryDependencies ++= Seq(
-  "com.github.japgolly.scalajs-react" %%% "core" % "1.7.2",
-  "com.github.japgolly.scalajs-react" %%% "extra" % "1.7.2",
+  "com.github.japgolly.scalajs-react" %%% "core" % "1.7.3",
+  "com.github.japgolly.scalajs-react" %%% "extra" % "1.7.3",
   "com.github.japgolly.scalacss" %%% "core" % "0.6.1",
   "com.github.japgolly.scalacss" %%% "ext-react" % "0.6.1",
   "org.scala-js" %%% "scalajs-dom" % "1.0.0",
   "io.suzaku" %%% "diode" % "1.1.10",
-  "io.suzaku" %%% "diode-react" % "1.1.9.170",
+  "io.suzaku" %%% "diode-react" % "1.1.10.172-antex",
   "com.github.mliarakos.lagomjs" %%% "lagomjs-scaladsl-client" % "0.4.0-1.6.2",
-  Dependencies.chimney.value
+  Dependencies.chimney.value,
 )
 
 Compile / npmDependencies ++= Seq(

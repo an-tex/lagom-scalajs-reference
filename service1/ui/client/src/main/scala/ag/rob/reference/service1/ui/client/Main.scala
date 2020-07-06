@@ -29,6 +29,6 @@ object Main {
     GlobalRegistry.addToDocumentOnRegistration()
 
     val router = Router(BaseUrl.fromWindowOrigin, routerConfig)
-    router().renderIntoDOM(dom.document.getElementById("moinMusicRoot"))
+    router().renderIntoDOM(dom.document.getElementById("referenceRoot"))
   }
 }

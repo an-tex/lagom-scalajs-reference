@@ -38,7 +38,7 @@ stIgnore ++= List(
 
 version in webpack := "4.43.0"
 version in startWebpackDevServer := "3.11.0"
-webpackBundlingMode := BundlingMode.LibraryOnly("moinmusic")
+webpackBundlingMode := BundlingMode.LibraryOnly("reference")
 webpackConfigFile := Some(baseDirectory.value / "webpack.config.js")
 
 scalaJSUseMainModuleInitializer := true

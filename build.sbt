@@ -65,7 +65,7 @@ lazy val service1UiClient = (project in file("service1/ui/client"))
   .dependsOn(common, service1Api.js)
 
 ThisBuild / organization := "ag.rob"
-ThisBuild / scalaVersion := "2.12.11"
+ThisBuild / scalaVersion := "2.13.3"
 
 ThisBuild / sources in doc in Compile := List()
 ThisBuild / publishArtifact in(Compile, packageDoc) := false

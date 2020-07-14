@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
 Compile / npmDependencies ++= Seq(
   "react" -> "16.13.1",
   "react-dom" -> "16.13.1",
-  "@types/react" -> "16.9.35",
+  "@types/react" -> "16.9.42",
   "@types/react-dom" -> "16.9.8",
   "antd" -> "4.4.0",
   "css-loader" -> "3.5.3",

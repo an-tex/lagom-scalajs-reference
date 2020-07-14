@@ -23,7 +23,7 @@ object Home extends Page {
       <.div(
         <.div(styles.red,
           <.div(
-            Button(onClick = _ => proxy.dispatchCB(Ping()))("Ping ", FontAwesomeIcon(fas.faAnchor)()),
+            Button.onClick(_ => proxy.dispatchCB(Ping()))("Ping ", FontAwesomeIcon(fas.faAnchor)()),
           ),
           <.div(
             "Pong: ",
@@ -32,7 +32,7 @@ object Home extends Page {
         ),
         <.div(
           <.div(
-            Button(onClick = _ => proxy.dispatchCB(GenerateRandomValue()))("Random", FontAwesomeIcon(fas.faAnchor)()),
+            Button.onClick(_ => proxy.dispatchCB(GenerateRandomValue()))("Random", FontAwesomeIcon(fas.faAnchor)()),
           ),
           <.div(
             "Random: ",
